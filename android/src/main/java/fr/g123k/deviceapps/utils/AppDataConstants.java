@@ -12,6 +12,7 @@ public class AppDataConstants {
     public static final String INSTALL_TIME = "install_time";
     public static final String UPDATE_TIME = "update_time";
     public static final String IS_ENABLED = "is_enabled";
+    public static final String IS_SPLIT = "is_split";
     public static final String CATEGORY = "category";
     public static final String APP_ICON = "app_icon";
 

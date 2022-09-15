@@ -247,6 +247,10 @@ class Application extends _BaseApplication {
   /// or disabled (installed, but not visible)
   final bool enabled;
 
+  /// Whether the app is from an app bundle
+  /// or a full apk
+  final bool isSplit;
+
   factory Application._(Map<dynamic, dynamic> map) {
     if (map.length == 0) {
       throw Exception('The map can not be null!');
@@ -268,6 +272,7 @@ class Application extends _BaseApplication {
         installTimeMillis = map['install_time'] as int,
         updateTimeMillis = map['update_time'] as int,
         enabled = map['is_enabled'] as bool,
+        isSplit = map['is_split'] as bool,
         category = _parseCategory(map['category']),
         super._fromMap(map);
 
@@ -332,7 +337,8 @@ class Application extends _BaseApplication {
         'installTimeMillis: $installTimeMillis, '
         'updateTimeMillis: $updateTimeMillis, '
         'category: $category, '
-        'enabled: $enabled'
+        'enabled: $enabled, '
+        'isSplit: $isSplit'
         '}';
   }
 
@@ -351,7 +357,8 @@ class Application extends _BaseApplication {
           installTimeMillis == other.installTimeMillis &&
           updateTimeMillis == other.updateTimeMillis &&
           category == other.category &&
-          enabled == other.enabled;
+          enabled == other.enabled &&
+          isSplit == other.isSplit;
 
   @override
   int get hashCode =>
@@ -365,7 +372,8 @@ class Application extends _BaseApplication {
       installTimeMillis.hashCode ^
       updateTimeMillis.hashCode ^
       category.hashCode ^
-      enabled.hashCode;
+      enabled.hashCode ^
+      isSplit.hashCode;
 }
 
 /// If the [includeAppIcons] attribute is provided, this class will be used.
