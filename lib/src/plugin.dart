@@ -267,7 +267,7 @@ class Application extends _BaseApplication {
         apkFilePath = map['apk_file_path'] as String,
         versionName = map['version_name'] as String?,
         versionCode = map['version_code'] as int,
-        dataDir = map['data_dir'] as String,
+        dataDir = map['data_dir'] as String?,
         systemApp = map['system_app'] as bool,
         installTimeMillis = map['install_time'] as int,
         updateTimeMillis = map['update_time'] as int,
