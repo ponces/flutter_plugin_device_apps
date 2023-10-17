@@ -36,4 +36,6 @@ android {
     dependencies {
         implementation 'androidx.annotation:annotation:1.2.0'
     }
+
+    namespace "fr.g123k.deviceapps"
 }
